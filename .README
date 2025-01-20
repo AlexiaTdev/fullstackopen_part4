@@ -1,0 +1,12 @@
+# goals part 4 Fullstack open course
+
+## Exercise 4.1 step 1
+
+- [x] Turn the application into a functioning npm project.
+- [x] To keep your development productive, configure the application to be executed with nodemon.
+- [x] You can create a new database for your application with MongoDB Atlas, or use the same database from the previous part's exercises.
+- [x] Verify that it is possible to add blogs to the list with Postman or the VS Code REST client and that the application returns the added blogs at the correct endpoint.
+
+## Exercise 4.2 step 2
+
+- [x] Refactor the application into separate modules as shown earlier in this part of the course material.
