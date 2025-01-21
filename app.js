@@ -4,7 +4,7 @@ require('express-async-errors')
 
 const app = express()
 const cors = require('cors')
-//const blogsRouter = require('./controllers/blogs')
+const blogsRouter = require('./controllers/blogs')
 const notesRouter = require('./controllers/notes')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
@@ -28,7 +28,7 @@ app.use(express.json())
 app.use(middleware.requestLogger)
 
 app.use('/api/notes', notesRouter)
-//app.use('/api/blogs', blogsRouter)
+app.use('/api/blogs', blogsRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

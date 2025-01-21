@@ -10,6 +10,26 @@ const initialNotes = [
     important: true
   }
 ]
+const initialBlogs = [
+  {
+    title:'A random blog name',
+    author:'John Doe',
+    url:'https://www.google.com/',
+    likes:3
+  },
+  {
+    title:'Another random blog name',
+    author:'Alice Doe',
+    url:'https://www.google.com/',
+    likes:8
+  },
+  {
+    title:'Another random blog name',
+    author:'Amanda Doe',
+    url:'https://www.google.com/',
+    likes:12
+  }
+]
 
 const nonExistingId = async () => {
   const note = new Note({ content: 'willremovethissoon' })
@@ -25,5 +45,8 @@ const notesInDb = async () => {
 }
 
 module.exports = {
-  initialNotes, nonExistingId, notesInDb
+  initialNotes,
+  initialBlogs,
+  nonExistingId,
+  notesInDb
 }

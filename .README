@@ -35,3 +35,10 @@
 
 - [x] Define a function called mostLikes that receives an array of blogs as its parameter. The function returns the author, whose blog posts have the largest amount of likes. The return value also contains the total number of likes that the author has received
 - [x] If there are many top bloggers, then it is enough to show any one of them
+
+## Exercise 4.8 Blog List Tests, step 1
+
+- [x] Use the SuperTest library for writing a test that makes an HTTP GET request to the /api/blogs URL.
+- [x] Verify that the blog list application returns the correct amount of blog posts in the JSON format.
+- [x] Once the test is finished, refactor the route handler to use the async/await syntax instead of promises.
+- [x] define the test environment so that you can write tests that use separate databases.

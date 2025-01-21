@@ -1,6 +1,6 @@
-const _ = require('lodash');
+const _ = require('lodash')
 
-const dummy = (blogs) => {
+const dummy = () => {
   return 1
 }
 
@@ -28,26 +28,26 @@ const favoriteBlog = (blogs) => {
 }
 
 const mostBlogs = (blogs) => {
-    const groupedByAuthor = _.groupBy(blogs, 'author');
-    const authorWithMostBlogs = _.maxBy(Object.keys(groupedByAuthor), author => groupedByAuthor[author].length);
-    return {
-        author: authorWithMostBlogs || '',
-        blogs: groupedByAuthor[authorWithMostBlogs]?.length || 0
-    }
+  const groupedByAuthor = _.groupBy(blogs, 'author')
+  const authorWithMostBlogs = _.maxBy(Object.keys(groupedByAuthor), author => groupedByAuthor[author].length)
+  return {
+    author: authorWithMostBlogs || '',
+    blogs: groupedByAuthor[authorWithMostBlogs]?.length || 0
+  }
 }
 
 const mostLikes = (blogs) => {
-    const groupedByAuthor = _.groupBy(blogs, 'author');
-    const totalLikesPerAuthor = _.map(groupedByAuthor, (blogs, author) => {
-        return {
-          author: author,
-          likes: _.sumBy(blogs, 'likes')
-        };
-      });
-      const authorWithMostLikes = _.maxBy(totalLikesPerAuthor, 'likes');
-    
-      return authorWithMostLikes || { author: '', likes: 0}
+  const groupedByAuthor = _.groupBy(blogs, 'author')
+  const totalLikesPerAuthor = _.map(groupedByAuthor, (blogs, author) => {
+    return {
+      author: author,
+      likes: _.sumBy(blogs, 'likes')
     }
+  })
+  const authorWithMostLikes = _.maxBy(totalLikesPerAuthor, 'likes')
+
+  return authorWithMostLikes || { author: '', likes: 0 }
+}
 
 module.exports = {
   dummy,
