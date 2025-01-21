@@ -20,3 +20,8 @@
 
 - [x] Define a new totalLikes function that receives a list of blog posts as a parameter. The function returns the total sum of likes in all of the blog posts.
 - [x] Write appropriate tests for the function.
+
+## Exercise 4.5 Helper functions and unit tests, step 3
+
+- [x] Define a new favoriteBlog function that receives a list of blogs as a parameter. The function finds out which blog has the most likes. If there are many top favorites, it is enough to return one of them.
+- [x] Write the tests for this exercise inside of a new describe block.
