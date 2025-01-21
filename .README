@@ -42,3 +42,9 @@
 - [x] Verify that the blog list application returns the correct amount of blog posts in the JSON format.
 - [x] Once the test is finished, refactor the route handler to use the async/await syntax instead of promises.
 - [x] define the test environment so that you can write tests that use separate databases.
+
+## Exercise 4.9 Blog List Tests, step 2
+
+- [x] Write a test that verifies that the unique identifier property of the blog posts is named id, by default the database names the property _id
+- [x] Make the required changes to the code so that it passes the test.
+- [x] The toJSON method discussed in part 3 is an appropriate place for defining the id parameter.
