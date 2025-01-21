@@ -30,3 +30,8 @@
 
 - [x] Define a function called mostBlogs that receives an array of blogs as a parameter. The function returns the author who has the largest amount of blogs. The return value also contains the number of blogs the top author has.
 - [x] If there are many top bloggers, then it is enough to return any one of them.
+
+## Exercise 4.7 Helper functions and unit tests, step 5
+
+- [x] Define a function called mostLikes that receives an array of blogs as its parameter. The function returns the author, whose blog posts have the largest amount of likes. The return value also contains the total number of likes that the author has received
+- [x] If there are many top bloggers, then it is enough to show any one of them

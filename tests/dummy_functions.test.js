@@ -80,10 +80,37 @@ describe('prolific author', () => {
   test('of a list with multiple prolific authors gets one of the top authors', () => {
     const result = listHelper.mostBlogs(listContent.listWithMultipleProlificAuthorsBlogs)
     assert.deepStrictEqual(result,
-        {
-            author: 'Mr Doe',
-            blogs: 2
-        }
+      {
+        author: 'Mr Doe',
+        blogs: 2
+      }
+    )
+  })
+})
+describe('top votes author', () => {
+  test('of empty list is empty author and totalLikes', () => {
+    const result = listHelper.mostLikes([])
+    assert.deepStrictEqual(result, {
+      author: '',
+      likes:0
+    })
+  })
+  test('of a list gets right author and total number of votes', () => {
+    const result = listHelper.mostLikes(listContent.listWithMultipleProlificAuthorsBlogs)
+    assert.deepStrictEqual(result,
+      {
+        author: 'Mme Doe',
+        likes: 71
+      }
+    )
+  })
+  test('of a list with multiple top voted authors gets one of the top voted authors', () => {
+    const result = listHelper.mostLikes(listContent.listWithMultipleTopVotedAuthorsBlogs)
+    assert.deepStrictEqual(result,
+      {
+        author: 'Mr Doe',
+        likes: 30
+      }
     )
   })
 })
