@@ -25,3 +25,8 @@
 
 - [x] Define a new favoriteBlog function that receives a list of blogs as a parameter. The function finds out which blog has the most likes. If there are many top favorites, it is enough to return one of them.
 - [x] Write the tests for this exercise inside of a new describe block.
+
+## Exercise 4.6 Helper functions and unit tests, step 4
+
+- [x] Define a function called mostBlogs that receives an array of blogs as a parameter. The function returns the author who has the largest amount of blogs. The return value also contains the number of blogs the top author has.
+- [x] If there are many top bloggers, then it is enough to return any one of them.
