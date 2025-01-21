@@ -11,7 +11,12 @@
 
 - [x] Refactor the application into separate modules as shown earlier in this part of the course material.
 
-## Exercise 4.3 Helper fu_nctions and unit tests, step 1
+## Exercise 4.3 Helper functions and unit tests, step 1
 
 - [x] Define a dummy functions that returns 1
 - [x] Verify that test configuration works
+
+## Exercise 4.4 Helper functions and unit tests, step 2
+
+- [x] Define a new totalLikes function that receives a list of blog posts as a parameter. The function returns the total sum of likes in all of the blog posts.
+- [x] Write appropriate tests for the function.
