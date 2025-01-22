@@ -57,6 +57,24 @@ describe('blogs api', () => {
     const contents = blogsAtEnd.map(n => n.title)
     assert(contents.includes('A beautiful test name'))
   })
+  test('a valid blog without likes can be added ', async () => {
+    const newBlog = {
+      title:'A test without likes',
+      author:'Maya Doe',
+      url:'https://www.google.com/',
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+
+    const blogsAtEnd = await helper.blogInDb()
+    assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length + 1)
+    const contents = blogsAtEnd.map(n => n.title)
+    assert(contents.includes('A test without likes'))
+  })
 })
 
 after(async () => {

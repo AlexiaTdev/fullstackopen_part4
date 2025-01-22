@@ -47,7 +47,7 @@
 
 - [x] Write a test that verifies that the unique identifier property of the blog posts is named id, by default the database names the property _id
 - [x] Make the required changes to the code so that it passes the test.
-- [x] The toJSON method discussed in part 3 is an appropriate place for defining the id parameter.
+- [x] The toJSON method discussed in part 3 is an appropriate place for defining the id parameter.kv
 
 ## Exercise 4.10 Blog List Tests, step 3
 
@@ -55,3 +55,7 @@
 - [x] verify that the total number of blogs in the system is increased by one.
 - [x] You can also verify that the content of the blog post is saved correctly to the database.
 - [x] Once the test is finished, refactor the operation to use async/await instead of promises.
+
+## Exercise 4.11 Blog List Tests, step 4
+
+- [x] Write a test that verifies that if the likes property is missing from the request, it will default to the value 0.
