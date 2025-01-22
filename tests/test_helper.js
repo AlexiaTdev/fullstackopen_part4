@@ -25,7 +25,7 @@ const initialBlogs = [
     likes:8
   },
   {
-    title:'Another random blog name',
+    title:'Yet, this is blog name, at random',
     author:'Amanda Doe',
     url:'https://www.google.com/',
     likes:12
@@ -38,6 +38,18 @@ const nonExistingId = async () => {
   await note.deleteOne()
 
   return note._id.toString()
+}
+const blogNonExistingId = async () => {
+  const blog = new Blog({
+    title:'non existing id',
+    author:'non existing Doe',
+    url:'https://www.google.com/',
+    likes:0
+  })
+  await blog.save()
+  await blog.deleteOne()
+
+  return blog._id.toString()
 }
 
 const notesInDb = async () => {
@@ -54,6 +66,7 @@ module.exports = {
   initialNotes,
   initialBlogs,
   nonExistingId,
+  blogNonExistingId,
   notesInDb,
   blogInDb
 }
