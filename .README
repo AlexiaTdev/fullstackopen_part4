@@ -69,3 +69,9 @@
 - [x] Implement functionality for deleting a single blog post resource.
 - [x] Use the async/await syntax. Follow RESTful conventions when defining the HTTP API.
 - [x] Implement tests for the functionality.
+
+## Exercise 4.14 Blog List Expansions, step 2
+
+- [x] Implement functionality for updating the information of an individual blog post. Use async/await
+- [x] The application mostly needs to update the number of likes for a blog post.
+- [x] Implement tests for the functionality.

@@ -111,7 +111,7 @@ describe('blogs api', () => {
       assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length)
     })
   })
-  describe('deletion of a new blog', () => {
+  describe('deletion of a blog post', () => {
     test('a blog can be deleted', async () => {
       const blogsAtStart = await helper.blogInDb()
       const blogToDelete = blogsAtStart[0]
@@ -143,6 +143,35 @@ describe('blogs api', () => {
         .expect(400)
     })
 
+  })
+  describe('modification of a blog post', () => {
+    test('succeeds with status code 201 for valid informations', async () => {
+      const blogsAtStart = await helper.blogInDb()
+      const blogToModify = blogsAtStart[0]
+      blogToModify.likes+=1
+
+      const resultBlog = await api
+        .put(`/api/blogs/${blogToModify.id}`)
+        .send(blogToModify)
+        .expect(201)
+        .expect('Content-Type', /application\/json/)
+
+      assert.deepStrictEqual(resultBlog.body, blogToModify)
+    })
+    test('fails with statuscode 404 if blog does not exist', async () => {
+      const validNonexistingId = await helper.blogNonExistingId()
+
+      await api
+        .put(`/api/blogs/${validNonexistingId}`)
+        .expect(404)
+    })
+    test('fails with statuscode 400 id is invalid', async () => {
+      const invalidId = '5a3d5da59070081a82a3445'
+
+      await api
+        .put(`/api/blogs/${invalidId}`)
+        .expect(400)
+    })
   })
 })
 
