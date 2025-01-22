@@ -59,3 +59,7 @@
 ## Exercise 4.11 Blog List Tests, step 4
 
 - [x] Write a test that verifies that if the likes property is missing from the request, it will default to the value 0.
+
+## Exercise 4.12 Blog List Tests, step 5
+
+- [x] Write tests related to creating new blogs via the /api/blogs endpoint, that verify that if the title or url properties are missing from the request data, the backend responds to the request with the status code 400 Bad Request.
