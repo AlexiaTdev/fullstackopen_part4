@@ -76,14 +76,18 @@ describe('when there are some notes saved initially', () => {
   describe('addition of a new note', () => {
 
     test('succeed with valid data', async () => {
-      const newNote = {
+      const usersAtStart = await helper.usersInDb()
+      const user = usersAtStart[0]
+      const newNote =  new Note({
         content: 'async/await simplifies making async calls',
         important: true,
-      }
-
+        user: user.id
+      })
+      const newNoteObj = newNote.toObject()
+      delete newNoteObj._id
       await api
         .post('/api/notes')
-        .send(newNote)
+        .send(newNoteObj)
         .expect(201)
         .expect('Content-Type', /application\/json/)
       const notesAtEnd = await helper.notesInDb()
@@ -93,16 +97,18 @@ describe('when there are some notes saved initially', () => {
     })
 
     test('note without content is not added', async () => {
-      const newNote = {
+      const newNote = new Note({
         important: true
-      }
+      })
+      const newNoteObj = newNote.toObject()
+      delete newNoteObj._id
+      console.log('newNoteObj', newNoteObj, typeof newNoteObj)
 
       await api
         .post('/api/notes')
-        .send(newNote)
+        .send(newNoteObj)
         .expect(400)
 
-      //const response = await api.get('/api/notes')
       const notesAtEnd = await helper.notesInDb()
       assert.strictEqual(notesAtEnd.length, helper.initialNotes.length)
     })
