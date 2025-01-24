@@ -87,3 +87,10 @@
   - [x] The username must be unique.
 - [x] The operation must respond with a suitable status code and some kind of an error message if an invalid user is created.
 - [x] Also, implement tests that ensure invalid users are not created and that an invalid add user operation returns a suitable status code and error message.
+
+## Exercise 4.17 Blog List Expansions, step 5
+
+- [x] (POST) Modify adding new blogs so that when a new blog is created, any user from the database is designated as its creator (for example the one found first).
+- [x] (GET) Expand blogs so that each blog contains information on the creator of the blog.
+  - [x] Modify listing all blogs so that the creator's user information is displayed with the blog : username, name and id
+  - [x] Modify listing all users also displays the blogs created by each user : url, title, author and id
