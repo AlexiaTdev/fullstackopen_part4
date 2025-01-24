@@ -75,3 +75,7 @@
 - [x] Implement functionality for updating the information of an individual blog post. Use async/await
 - [x] The application mostly needs to update the number of likes for a blog post.
 - [x] Implement tests for the functionality.
+
+## Exercise 4.15 Blog List Expansions, step 3
+
+- [x] Implement a way to create new users by doing an HTTP POST request to address api/users. Users have a username, password and name.
