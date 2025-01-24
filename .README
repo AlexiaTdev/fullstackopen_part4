@@ -94,3 +94,7 @@
 - [x] (GET) Expand blogs so that each blog contains information on the creator of the blog.
   - [x] Modify listing all blogs so that the creator's user information is displayed with the blog : username, name and id
   - [x] Modify listing all users also displays the blogs created by each user : url, title, author and id
+
+## Exercise 4.18 Blog List Expansions, step 6
+
+- [x] Implement token-based authentication to post blogs
