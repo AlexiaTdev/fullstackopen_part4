@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const app = require('../app')
 
+const User = require('../models/user')
+const bcrypt = require('bcrypt')
+
 const api = supertest(app)
 const assert = require('node:assert')
 
@@ -17,6 +20,13 @@ describe('when there are some notes saved initially', () => {
     const noteObjects = helper.initialNotes
       .map(note => new Note(note))
     const promiseArray = noteObjects.map(note => note.save())
+
+    await User.deleteMany({})
+    const passwordHash = await bcrypt.hash('sekret', 10)
+    const user = new User({ username: 'John Root', passwordHash })
+
+    const tryarray = await user.save()
+    promiseArray.push(tryarray)
     await Promise.all(promiseArray)
   })
 

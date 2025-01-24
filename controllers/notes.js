@@ -32,7 +32,6 @@ notesRouter.post('/', async (request, response) => {
     return response.status(401).json({ error: 'token invalid' })
   }
   const user = await User.findById(decodedToken.id)
-  console.log('----------------------userIN NOTES', user)
 
   const note = new Note({
     content: body.content,

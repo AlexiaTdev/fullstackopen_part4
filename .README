@@ -79,3 +79,11 @@
 ## Exercise 4.15 Blog List Expansions, step 3
 
 - [x] Implement a way to create new users by doing an HTTP POST request to address api/users. Users have a username, password and name.
+
+## Exercise 4.16 Blog List Expansions, step 4
+
+- [x] Add a feature which adds the following restrictions to creating new users:
+  - [x] Both username and password must be given and both must be at least 3 characters long.
+  - [x] The username must be unique.
+- [x] The operation must respond with a suitable status code and some kind of an error message if an invalid user is created.
+- [x] Also, implement tests that ensure invalid users are not created and that an invalid add user operation returns a suitable status code and error message.
