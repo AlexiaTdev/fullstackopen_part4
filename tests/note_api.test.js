@@ -78,18 +78,34 @@ describe('when there are some notes saved initially', () => {
     test('succeed with valid data', async () => {
       const usersAtStart = await helper.usersInDb()
       const user = usersAtStart[0]
+
+      //get the token from user
+      const userForToken = {
+        username: user.username,
+        password: 'sekret'
+      }
+
+      const responseToken = await api
+        .post('/api/login')
+        .send(userForToken)
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
       const newNote =  new Note({
         content: 'async/await simplifies making async calls',
         important: true,
         user: user.id
       })
+
       const newNoteObj = newNote.toObject()
       delete newNoteObj._id
       await api
         .post('/api/notes')
         .send(newNoteObj)
+        .set('Authorization', `Bearer ${responseToken.body.token}`)
         .expect(201)
         .expect('Content-Type', /application\/json/)
+
       const notesAtEnd = await helper.notesInDb()
       assert.strictEqual(notesAtEnd.length, helper.initialNotes.length + 1)
       const contents = notesAtEnd.map(n => n.content)
@@ -97,16 +113,33 @@ describe('when there are some notes saved initially', () => {
     })
 
     test('note without content is not added', async () => {
+
+      const usersAtStart = await helper.usersInDb()
+      const user = usersAtStart[0]
+      //get the token from user
+      const userForToken = {
+        username: user.username,
+        password: 'sekret'
+      }
+
+      const responseToken = await api
+        .post('/api/login')
+        .send(userForToken)
+        .expect(200)
+        .expect('Content-Type', /application\/json/)
+
       const newNote = new Note({
-        important: true
+        important: true,
+        user: user.id
       })
       const newNoteObj = newNote.toObject()
       delete newNoteObj._id
-      console.log('newNoteObj', newNoteObj, typeof newNoteObj)
+
 
       await api
         .post('/api/notes')
         .send(newNoteObj)
+        .set('Authorization', `Bearer ${responseToken.body.token}`)
         .expect(400)
 
       const notesAtEnd = await helper.notesInDb()
