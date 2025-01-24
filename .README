@@ -108,3 +108,8 @@
 
 - [x] Refactor taking the token to a middleware. The middleware should take the token from the Authorization header and assign it to the token field of the request object.
 - [x] Remember that a normal middleware function is a function with three parameters, that at the end calls the last parameter next to move the control to the next middleware
+
+## Exercise 4.21 Blog List Expansions, step 9
+
+- [x] Change the delete blog operation so that a blog can be deleted only by the user who added it. Therefore, deleting a blog is possible only if the token sent with the request is the same as that of the blog's creator.
+- [x] If deleting a blog is attempted without a token or by an invalid user, the operation should return a suitable status code.
