@@ -113,3 +113,9 @@
 
 - [x] Change the delete blog operation so that a blog can be deleted only by the user who added it. Therefore, deleting a blog is possible only if the token sent with the request is the same as that of the blog's creator.
 - [x] If deleting a blog is attempted without a token or by an invalid user, the operation should return a suitable status code.
+
+## Exercise 4.22 Blog List Expansions, step 10
+
+- [x] Create a new middleware userExtractor, that finds out the user and sets it to the request object. When you register the middleware in app.js using middleware.userExtractor, the user will be set in the field request.user.
+- [x] Use the extractor exclusively with blogsRouter
+- [x] Register the middleware only for specific operations : POST and DELETE.
