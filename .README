@@ -119,3 +119,13 @@
 - [x] Create a new middleware userExtractor, that finds out the user and sets it to the request object. When you register the middleware in app.js using middleware.userExtractor, the user will be set in the field request.user.
 - [x] Use the extractor exclusively with blogsRouter
 - [x] Register the middleware only for specific operations : POST and DELETE.
+
+## Exercise 4.23 Blog List Expansions, step 11
+
+- [x] Fix tests for blog :
+  - [x] succeeds if adding new blog
+  - [x] succeeds if deleting a blog
+  - [x] fails if adding a new blog without token : test to ensure adding a blog fails with the proper status code 401 Unauthorized if a token is not provided.
+  - [x] fails if adding a new blog with invalid token
+  - [x] fails if deleting a blog without token
+  - [x] fails if deleting a blog with invalid token

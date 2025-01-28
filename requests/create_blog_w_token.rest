@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/blogs HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFub3RoZXIgVXNlciIsImlkIjoiNjc5NDExMmIyMmZlNTEyMDliMDA3MDJmIiwiaWF0IjoxNzM3NzU3MDAxLCJleHAiOjE3Mzc3NjA2MDF9.o7WMUjz_hFp4WL-wJWPPN_Kh4FvYIo-2AatzqOsEcKU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFub3RoZXIgVXNlciIsImlkIjoiNjc5NDExMmIyMmZlNTEyMDliMDA3MDJmIiwiaWF0IjoxNzM3OTk1NDQ2LCJleHAiOjE3Mzc5OTkwNDZ9.3w_VkJyYUfYpZiwr97TFB9i3j5Orn25WFU0dYX1ntv0
 
 {
     "title": "A random blog name with token",
